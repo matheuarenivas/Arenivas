@@ -9,7 +9,7 @@ class NameSection extends Component {
             <div className="lg:mt-0">
                 <h1 className='text-white text-2xl sm:text-5xl lg:text-6xl font-extrabold'> 
                     <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-red-300 to-pink-400'>
-                        Hello, I'm{" "} 
+                    {`Hello, I'm `} 
                     </span>
                     <br className="hidden lg:block" />
                     <TypeAnimation

@@ -1,6 +1,15 @@
 import React from 'react'
 
-const experiences = [
+interface Experience {
+    title: string;
+    company: string;
+    location: string;
+    period: string;
+    description?: string; // Optional if it's not always included
+    responsibilities: string[];
+}
+
+const experiences: Experience[] = [
     {
         title: "Freelance Founder / Website Designer",
         company: "SupaClean",
@@ -44,7 +53,7 @@ const experiences = [
 ];
 
 
-const ExperienceCard = ({ experience }) => {
+const ExperienceCard: React.FC<{ experience: Experience }> = ({ experience }) => {
     return (
         <div className="bg-grey-800 shadow-lg shadow-[#7d7dff] rounded-lg p-4 mb-4">
             <h3 className="font-bold text-xl">{experience.title}</h3>

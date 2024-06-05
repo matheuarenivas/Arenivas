@@ -8,7 +8,7 @@ class NameSection extends Component {
         return (
             <div className=" mt-4 lg:mt-0"> {/* Center alignment and vertical spacing */}
                 <h1 className='text-white text-2xl sm:text-5xl lg:text-6xl font-extrabold'>
-                    <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-red-300 to-pink-400'>
+                    <span className='text-white'>
                        {`Hello, I'm`}
                     </span>
                 </h1>

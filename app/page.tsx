@@ -14,7 +14,7 @@ export default function Home() {
             <div className="mr-6 flex-shrink-0">
               <div className="relative w-36 h-36"> {/* Ensure the container is square */}
                 <Image 
-                  src="/images/me.jpg" 
+                  src="/images/me.JPG" 
                   alt="Your Image" 
                   layout="fill" 
                   objectFit="cover" 

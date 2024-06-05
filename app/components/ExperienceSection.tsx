@@ -74,7 +74,7 @@ const ExperienceCard: React.FC<{ experience: Experience }> = ({ experience }) =>
         <div className="bg-grey-800 p-5 flex-row items-center">
             <Image src={experience.icon} alt={`${experience.company} logo`} width={50} height={50} className="mr-4" />
             <div>
-                <h3 className="font-bold text-xl">{experience.title}</h3>
+                <h3 className="text-white font-bold text-xl">{experience.title}</h3>
                 <p className="text-white">{experience.company}, {experience.location} | {experience.period}</p>
                 <ul className="list-disc ml-5 mt-2 text-[#ADB7BE]">
                     {experience.responsibilities.map((item, index) => (

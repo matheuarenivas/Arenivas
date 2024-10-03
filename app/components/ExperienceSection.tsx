@@ -96,7 +96,7 @@ const ExperienceSection = () => {
             {experiences.map((exp, index) => (
                 <ExperienceCard key={index} experience={exp} />
             ))}
-            <a href="https://drive.google.com/file/d/1N6OtAJAY5ujVA9tTOKFEKntVdxy96imd/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+            <a href="https://docs.google.com/document/d/1ESXbdhLD1GluGljjSfxFKzfOk8hn8aQZfhqQVF0fgFQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
                 <button className="lg:mt-5 px-6 py-3 w-full sm:w-fit rounded-full bg-white text-black font-semibold">
                     View Full Resume
                 </button>

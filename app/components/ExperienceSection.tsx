@@ -1,110 +1,113 @@
-import React from 'react'
-import Image from 'next/image';
+"use client";
 
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+
+// Define the Experience interface
 interface Experience {
-    icon: string;
-    title: string;
-    company: string;
-    location: string;
-    period: string;
-    description?: string; // Optional if it's not always included
-    responsibilities: string[];
+  icon: string;
+  title: string;
+  company: string;
+  location: string;
+  period: string;
+  description?: string;
+  responsibilities: string[];
 }
 
+// Data for the experiences
 const experiences: Experience[] = [
-    {
-        title: "Software Engineer Intern",
-        company: "BCAMP",
-        location: "United States",
-        period: "June 2024 – Present",
-        responsibilities: [
-            "Specializing in Blockchain Development.",
-        ],
-        icon: "/images/BCAMP.jpeg" 
-    },
-    {
-        title: "Founder & Website Designer",
-        company: "SupaClean",
-        location: "Phoenix, AZ",
-        period: "May 2023 – Present",
-        responsibilities: [
-            "Designed SupaCleans websites tailored to desired requirements.",
-            "Managed and implemented site deployments including supacleanaz.com."
-        ],
-        icon: "/images/supaclean.jpeg" 
-    },
-    {
-        title: "Team Member",
-        company: "Panera Bread",
-        location: "Phoenix, AZ",
-        period: "Nov 2021 – May 2023",
-        responsibilities: [
-            "Enhanced customer satisfaction through superior service and accurate preparation of diverse coffee and tea beverages.",
-            "Worked with a team to uphold cleanliness and organization."
-        ],
-        icon: "/images/panera.jpeg" 
-    },
-    {
-        title: "Team Member",
-        company: "In-N-Out",
-        location: "Phoenix, AZ",
-        period: "Oct 2021 – Jan 2022",
-        responsibilities: [
-            "Increased efficiency by mastering digital ordering systems, reducing wait times with accurate processing of many daily transactions.",
-            "Maintained cleanliness and organization with a team, ensuring adherence to health and safety standards."
-        ],
-        icon: "/images/innout.png" 
-    },
-    {
-        title: "Team Lead Manager",
-        company: "Chick-Fil-A",
-        location: "Phoenix, AZ",
-        period: "Nov 2020 – Sep 2021",
-        responsibilities: [
-            "Oversaw staff placement and conducted training, enhancing team performance and service quality.",
-            "Collaborated with colleagues to keep the kitchen clean and organized, meeting health and safety guidelines."
-        ],
-        icon: "/images/chick.png" 
-    }
+  {
+    title: "Software Engineer",
+    company: "BCAMP",
+    location: "United States",
+    period: "June 2024 – Present",
+    responsibilities: [
+      "Specializing in Blockchain Development.",
+    ],
+    icon: "/images/BCAMP.jpeg",
+  },
+  {
+    title: "Team Lead Manager",
+    company: "Chick-Fil-A",
+    location: "Phoenix, AZ",
+    period: "Nov 2020 – Sep 2021",
+    responsibilities: [
+      "Oversaw staff placement and conducted training, enhancing team performance and service quality.",
+      "Collaborated with colleagues to keep the kitchen clean and organized, meeting health and safety guidelines.",
+    ],
+    icon: "/images/chick.png",
+  },
 ];
 
-
+// Card component for each experience
 const ExperienceCard: React.FC<{ experience: Experience }> = ({ experience }) => {
-    return (
-        <div className="bg-grey-800 p-5 flex-row items-center">
-            <Image src={experience.icon} alt={`${experience.company} logo`} width={50} height={50} className="mr-4" />
-            <div>
-                <h3 className="text-white font-bold text-xl">{experience.title}</h3>
-                <p className="text-white">{experience.company}, {experience.location} | {experience.period}</p>
-                <ul className="list-disc ml-5 mt-2 text-[#ADB7BE]">
-                    {experience.responsibilities.map((item, index) => (
-                        <li key={index}>{item}</li>
-                    ))}
-                </ul>
-            </div>
-        </div>
-    );
+  return (
+    <motion.div
+      whileHover={{
+        scale: 1.05,
+        boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.8)", // Neutral shadow
+      }}
+      className=" p-4 sm:p-6 rounded-lg flex flex-col sm:flex-row items-center sm:items-start gap-4 transition-transform transform"
+    >
+      {/* Company Icon */}
+      <Image
+        src={experience.icon}
+        alt={`${experience.company} logo`}
+        width={60}
+        height={60}
+        className="rounded-full"
+      />
+
+      {/* Experience Details */}
+      <div className="text-center sm:text-left flex-1">
+        <h3 className="text-white font-bold text-lg sm:text-xl">{experience.title}</h3>
+        <p className="text-white text-sm sm:text-base">
+          {experience.company}, {experience.location} | {experience.period}
+        </p>
+        <ul className="list-disc ml-5 mt-2 text-[#ADB7BE] text-sm sm:text-base">
+          {experience.responsibilities.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </motion.div>
+  );
 };
 
-
+// Main Experience Section
 const ExperienceSection = () => {
-    return (
-        <div className="flex-1 px-4 lg:px-150 mt-6 lg:mt-10">
-            <h2 className='text-2xl lg:text-3xl text-white font-bold'>
-                Experience
-            </h2>
-            {experiences.map((exp, index) => (
-                <ExperienceCard key={index} experience={exp} />
-            ))}
-            <a href="https://drive.google.com/file/d/1iQkT8IMrG77udoRtvOeUoG0ZRcDyE4sX/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                <button className="lg:mt-5 px-6 py-3 w-full sm:w-fit rounded-full bg-white text-black font-semibold">
-                    View Full Resume
-                </button>
-            </a>
-        </div>
-    );
+  return (
+    <div
+      id="experience"
+      className="flex-1 px-4 sm:px-8 lg:px-24 py-8 sm:py-12 lg:py-16"
+    >
+      {/* Section Title */}
+      <h2 className="text-xl sm:text-2xl lg:text-3xl text-white font-bold mb-6 sm:mb-8 text-center sm:text-left">
+        Experience
+      </h2>
+
+      {/* Experience Cards */}
+      <div className="space-y-6 sm:space-y-8">
+        {experiences.map((exp, index) => (
+          <ExperienceCard key={index} experience={exp} />
+        ))}
+      </div>
+
+      {/* Resume Button */}
+      <a
+        href="https://drive.google.com/file/d/1iQkT8IMrG77udoRtvOeUoG0ZRcDyE4sX/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block mt-8 sm:mt-12 text-center"
+      >
+        <button className="px-4 sm:px-6 py-2 sm:py-3 w-full sm:w-auto rounded-full bg-transparent text-blue-500 font-semibold hover:bg-gray-700 focus:outline-none">
+          View Full Resume
+        </button>
+      </a>
+    </div>
+  );
 };
-
-
 
 export default ExperienceSection;
+

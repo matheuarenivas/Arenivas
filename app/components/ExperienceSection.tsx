@@ -96,7 +96,7 @@ const ExperienceSection = () => {
 
       {/* Resume Button */}
       <a
-        href="https://drive.google.com/file/d/1iQkT8IMrG77udoRtvOeUoG0ZRcDyE4sX/view?usp=sharing"
+        href="/images/Matheus_Resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="block mt-8 sm:mt-12 text-center"

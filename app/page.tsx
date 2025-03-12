@@ -3,6 +3,7 @@ import NameSection from "./components/NameSection";
 import AboutMeSection from "./components/AboutMeSection";
 import SocialLinks from "./components/SocialLinks";
 import ExperienceSection from "./components/ExperienceSection";
+import GitHubSection from "./components/GitHubSection";
 import StarsBackground from "./components/StarsBackground";
 import HamburgerMenuSection from "./components/HamburgerMenuSection";
 
@@ -32,6 +33,7 @@ export default function Home() {
         <div className="md:col-span-1">
           <AboutMeSection />
           <ExperienceSection />
+          <GitHubSection />
         </div>
       </div>
     </>
